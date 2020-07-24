@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Love Calculator</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+    <header>
+        <div class="card w-50 m-auto text-center">
+            <div class="card-header bg-danger text-white">LOVE CALCULATOR</div>
+            <div class="card-body">
+                <form class="form-inline w-75 m-auto">
+                    <div class="form-group">
+                        <input type="text" name="" class="form-control text-center" placeholder="Your Name" id="name">
+                    </div>
+                    <div><span class="pl-4 pr-4"> + </span></div>
+                    <div class="form-group">
+                        <input type="text" name="" class="form-control text-center" placeholder="Crush Name" id="lname">
+                    </div>
+                </form>
+                <br>
+                <div class="w-75 m-auto">
+                    <button class="btn btn-success w-50" onclick="checkloveper()">Love %</button>
+                </div>
+                <br>
+                <div>
+                    <input type="text" name="" id="lovevalue" class="form-control text-center w-25 m-auto" placeholder="Love Percentage">
+                </div>
+                <br>
+                <div class="w-25 m-auto">
+                    <button class="resetbtn btn btn-success w-50 " onclick="reset()">Reset</button>
+                </div>
+            </div>
+            <div class="card-footer">||** Love is in the Air **||</div>
+          </div>
+    </header>
+
+    <script>
+        function checkloveper(){
+            var name = document.getElementById('name').value;
+            var lname = document.getElementById('lname').value;
+            if(name == ''){
+                alert('Enter your Name')
+            }else if (name.length<=2){
+                alert('Minimum Length is 3 characters')
+            }else if(!isNaN(name)){
+                alert('Numbers are not allowed')
+            }
+
+            else if(lname == ''){
+                alert('Enter your Crush Name')
+            }else if (lname.length<=2){
+                alert('Minimum Length is 3 characters')
+            }else if(!isNaN(lname)){
+                alert('Numbers are not allowed')
+            }
+            else{
+                var lovedata = Math.random()*100;
+                lovedata = Math.floor(lovedata);
+                document.getElementById('lovevalue').value=lovedata + "%";
+            }
+        }
+
+        function reset(){
+            document.getElementById('name').value = '';
+            document.getElementById('lname').value = '';
+            
+            document.getElementById('lovevalue').value = '';
+
+
+        }
+
+    </script>
+</body>
+</html>
